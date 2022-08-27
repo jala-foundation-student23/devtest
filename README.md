@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the repositofy for the Jalasoft Fullstack Bootcamp. I'm Rafael de Paula, and here you can see my codebase.
 
-Things you may want to cover:
+To run locally, you will need to install Ruby, Ruby on Rails and PostgreSQL in your machine.
 
-* Ruby version
+### After installed:
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Clone the repo;
+- Create the database with `rails db:create`;
+- Run the migrations with `rails db:migrate`;
+- Run the app with `bin/dev`.
