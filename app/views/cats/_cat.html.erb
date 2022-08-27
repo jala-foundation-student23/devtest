@@ -9,14 +9,13 @@
     <%= image_tag 'https://cataas.com/cat' %>
   </p>
 
-  <p>
     <strong>Favorited:</strong>
-    <%= cat.favorited %>
+    <%= cat.favorited? ? 'Yes' : 'No' %>
   </p>
 
   <p>
     <strong>Is adopted:</strong>
-    <%= cat.is_adopted %>
+    <%= cat.is_adopted? ? 'Yes' : 'No' %>
   </p>
 
   <p>

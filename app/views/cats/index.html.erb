@@ -23,6 +23,8 @@
             <p>Name: <%= cat.name %></p>
             <p>Added Date: <%= cat.created_at.strftime('%d/%m/%Y') %></p>
             <p>Tags: <% cat.cat_tags %>
+            <p>Favorited: <%= cat.favorited? ? 'Yes' : 'No' %></p>
+            <p>Adopted: <%= cat.is_adopted? ? 'Yes' : 'Not yet' %></p>
             <p>
               <%= link_to "Show cat", cat, data: { turbo_frame: "show_frame" } %>
             </p>
