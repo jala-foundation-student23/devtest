@@ -6,6 +6,7 @@
   <div class="container">
     <div class="box">
       
+
       <turbo-frame id="list_frame">
         <div id="cats" class="wrapper">
 
@@ -18,6 +19,7 @@
 
           <% @cats.each do |cat| %>    
           <div class="info">
+          <%= turbo_stream_from "cats" %>
             <p>Name: <%= cat.name %></p>
             <p>Added Date: <%= cat.created_at.strftime('%d/%m/%Y') %></p>
             <p>Tags: <% cat.cat_tags %>
@@ -26,7 +28,7 @@
             </p>
           
             <div class="delete-btn">
-              <%= button_to "Destroy this cat", cat, method: :destroy %>
+              <%= button_to "Destroy this cat", @cat, method: :delete %>
             </div>
           </div>
           <% end %>

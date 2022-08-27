@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   root "cats#index"
 
   get '/cats/:id/cat',                          to: 'cats#cat'
+  delete '/cats',                               to: 'cats#destroy'
 end

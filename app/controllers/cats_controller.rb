@@ -38,6 +38,7 @@ class CatsController < ApplicationController
       if @cat.save
         format.html { redirect_to cat_url(@cat), notice: "Cat was successfully created." }
         format.json { render :show, status: :created, location: @cat }
+        format.turbo_stream
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @cat.errors, status: :unprocessable_entity }
