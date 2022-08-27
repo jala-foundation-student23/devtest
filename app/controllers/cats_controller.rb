@@ -52,6 +52,7 @@ class CatsController < ApplicationController
       if @cat.update(cat_params)
         format.html { redirect_to cat_url(@cat), notice: "Cat was successfully updated." }
         format.json { render :show, status: :ok, location: @cat }
+        format.turbo_stream
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @cat.errors, status: :unprocessable_entity }
@@ -66,6 +67,7 @@ class CatsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to cats_url, notice: "Cat was successfully destroyed." }
       format.json { head :no_content }
+      format.turbo_stream
     end
   end
 
