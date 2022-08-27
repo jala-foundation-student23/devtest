@@ -1,0 +1,44 @@
+<header>
+    <h1>Jalasoft Cat House</h1>
+</header>
+
+<section class="cats">
+  <div class="container">
+    <div class="box">
+      
+      <turbo-frame id="list_frame">
+        <div id="cats" class="wrapper">
+
+          <div class="top">
+            <h3>Cats List</h3>
+            <div class="btn">
+              <p><%= link_to "Add new cat", new_cat_path, data: { turbo_frame: "show_frame" } %></p>
+            </div>
+          </div>
+
+          <% @cats.each do |cat| %>    
+          <div class="info">
+            <p>Name: <%= cat.name %></p>
+            <p>Added Date: <%= cat.created_at.strftime('%d/%m/%Y') %></p>
+            <p>Tags: <% cat.cat_tags %>
+            <p>
+              <%= link_to "Show cat", cat, data: { turbo_frame: "show_frame" } %>
+            </p>
+          
+            <div class="delete-btn">
+              <%= button_to "Destroy this cat", cat, method: :destroy %>
+            </div>
+          </div>
+          <% end %>
+          
+        </div>    
+      </turbo-frame>
+
+      <turbo-frame id="show_frame">
+        <div class="frame">
+        </div>
+      </turbo-frame>
+
+    </div>
+  </div>
+</section>
